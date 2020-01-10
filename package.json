@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "license": "GPL-3.0",
-  "author": "Tony Crowe <npm@tonycrowe.com> (https://github.com/tcrowe)",
+  "author": {
+    "name": "Tony Crowe",
+    "url": "https://tcrowe.github.io/contact/"
+  },
   "homepage": "https://github.com/tcrowe/webextension-infogalactic#readme",
   "repository": {
     "type": "git",

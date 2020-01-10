@@ -35,7 +35,7 @@ For the future
 
 ## Copying, license, and contributing
 
-Copyright (C) Tony Crowe [github@tonycrowe.com](mailto:github@tonycrowe.com) (<https://tcrowe.github.io>) 2018
+Copyright (C) Tony Crowe 2020 <https://tcrowe.github.io/contact/>
 
 Thank you for using and contributing to make webextension-infogalactic better.
 
