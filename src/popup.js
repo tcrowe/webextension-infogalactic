@@ -2,7 +2,11 @@ const { get, set, load, onChange } = require("./storage");
 const toggleOn = document.getElementById("toggle-on");
 const toggleOff = document.getElementById("toggle-off");
 
-function update() {
+/**
+ * Handling the event when a user changes settings styate
+ * @method state_change
+ */
+function state_change() {
   const enabled = get("enabled");
   toggleOn.checked = enabled === true;
   toggleOff.checked = enabled === false;
@@ -10,5 +14,5 @@ function update() {
 
 toggleOn.addEventListener("click", () => set("enabled", true));
 toggleOff.addEventListener("click", () => set("enabled", false));
-onChange(update);
-load(update);
+onChange(state_change);
+load(state_change);

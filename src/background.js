@@ -1,9 +1,17 @@
 const { get } = require("./storage");
-const wpEnglishPattern = new RegExp("^https?://en.wikipedia.org/wiki/");
-const igEnglish = "https://infogalactic.com/info/";
+const wpEnglishPattern = new RegExp(
+  "^https?://([a-z]{2}).(m.)?wikipedia.org/wiki/"
+);
+const infogalactic = "https://infogalactic.com/info/";
 const filter = { urls: ["<all_urls>"] };
 const extraInfo = ["blocking"];
 
+/**
+ * Handle the event before a request is sent
+ * @method before_request
+ * @param {object} req
+ * @returns {object}
+ */
 function before_request(req) {
   const enabled = get("enabled");
 
@@ -15,7 +23,7 @@ function before_request(req) {
   let { url } = req;
 
   if (wpEnglishPattern.test(url) === true) {
-    const redirectUrl = url.replace(wpEnglishPattern, igEnglish);
+    const redirectUrl = url.replace(wpEnglishPattern, infogalactic);
     return { redirectUrl };
   }
 }
